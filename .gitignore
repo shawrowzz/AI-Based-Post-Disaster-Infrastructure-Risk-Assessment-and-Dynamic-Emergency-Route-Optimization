@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Checkpoints, weights and model artifacts
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.bin
+
+# Datasets, local splits and raw data
+data/
+Data/
+train*/
+hold/
+test*/
+*.tar.gz
+*.zip
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+

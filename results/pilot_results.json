@@ -1,0 +1,284 @@
+{
+  "config": {
+    "seed": 0,
+    "n_train": 400,
+    "n_val": 80,
+    "crop": 512,
+    "batch_size": 4,
+    "epochs": 5,
+    "lr": 0.00015,
+    "weight_decay": 0.0001,
+    "class_weights": [
+      0.2,
+      1.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "n_gradcam_tiles": 20
+  },
+  "backbone": "resnet50.a1_in1k",
+  "device": "mps",
+  "n_params_M": 36.294469,
+  "latency": {
+    "gpu_512": {
+      "median_ms": 112.9526459844783,
+      "p25_ms": 112.89192651747726,
+      "p75_ms": 113.0827504384797,
+      "n_runs": 30
+    },
+    "gpu_1024": {
+      "median_ms": 447.84631254151464,
+      "p25_ms": 447.62833378626965,
+      "p75_ms": 448.2739585218951,
+      "n_runs": 20
+    },
+    "cpu_512": {
+      "median_ms": 357.89158300030977,
+      "p25_ms": 356.38172895414755,
+      "p75_ms": 374.2580830003135,
+      "n_runs": 15
+    },
+    "cpu_1024": {
+      "median_ms": 1989.45727100363,
+      "p25_ms": 1488.0698125052731,
+      "p75_ms": 2439.0182922652457,
+      "n_runs": 8
+    }
+  },
+  "train_events": [
+    "guatemala-volcano",
+    "hurricane-florence",
+    "hurricane-harvey",
+    "hurricane-matthew",
+    "hurricane-michael",
+    "mexico-earthquake",
+    "midwest-flooding",
+    "palu-tsunami",
+    "santa-rosa-wildfire",
+    "socal-fire"
+  ],
+  "val_events": [
+    "guatemala-volcano",
+    "hurricane-florence",
+    "hurricane-harvey",
+    "hurricane-matthew",
+    "hurricane-michael",
+    "mexico-earthquake",
+    "midwest-flooding",
+    "palu-tsunami",
+    "santa-rosa-wildfire",
+    "socal-fire"
+  ],
+  "training": {
+    "epoch_loss": [
+      1.3906548309326172,
+      1.245797691345215,
+      1.201399303674698,
+      1.1726827216148377,
+      1.1417222338914872
+    ],
+    "epoch_sec": [
+      187.86625004094094,
+      579.3122611249564,
+      405.4957508329535,
+      254.03752645803615,
+      252.26407737506088
+    ],
+    "mps_driver_mem_GB": 6.817071104,
+    "train_pairs_per_sec": 1.191202351803301
+  },
+  "metrics": {
+    "f1_localization": 0.6812368194582908,
+    "f1_damage_harmonic": 3.9999816509296694e-06,
+    "f1_damage_macro_mean": 0.5093180253700471,
+    "xview2_style_composite": 0.2043738458246429,
+    "per_class_f1": {
+      "no_damage": 0.873402106479214,
+      "minor_damage": 0.0,
+      "major_damage": 0.5585939920912055,
+      "destroyed": 0.6052760029097688
+    },
+    "gt_pixel_support": {
+      "no_damage": 3507842,
+      "minor_damage": 460833,
+      "major_damage": 824207,
+      "destroyed": 219005
+    }
+  },
+  "gradcam": {
+    "layer": "head[0] (fused FPN, stride 4)",
+    "n_tiles": 20,
+    "mean_ebpg": 0.5044564221054315,
+    "mean_building_area": 0.08122177124023437,
+    "median_ratio_ebpg_over_area": 13.034208720979326,
+    "tiles_above_chance": 20,
+    "per_tile": [
+      {
+        "idx": 0,
+        "id": "guatemala-volcano_00000004",
+        "ebpg": 0.46825817227363586,
+        "area": 0.032820701599121094,
+        "ratio": 14.26715912392852,
+        "damaged_px": 32892
+      },
+      {
+        "idx": 4,
+        "id": "hurricane-florence_00000201",
+        "ebpg": 0.7309228777885437,
+        "area": 0.012340545654296875,
+        "ratio": 59.229380795981456,
+        "damaged_px": 0
+      },
+      {
+        "idx": 7,
+        "id": "hurricane-florence_00000322",
+        "ebpg": 0.6106598377227783,
+        "area": 0.023281097412109375,
+        "ratio": 26.229856218253317,
+        "damaged_px": 743
+      },
+      {
+        "idx": 8,
+        "id": "hurricane-florence_00000385",
+        "ebpg": 0.10688070207834244,
+        "area": 0.034064292907714844,
+        "ratio": 3.1376169283154622,
+        "damaged_px": 0
+      },
+      {
+        "idx": 9,
+        "id": "hurricane-florence_00000458",
+        "ebpg": 0.5699645280838013,
+        "area": 0.04829692840576172,
+        "ratio": 11.801258318030133,
+        "damaged_px": 0
+      },
+      {
+        "idx": 10,
+        "id": "hurricane-florence_00000520",
+        "ebpg": 0.8250467777252197,
+        "area": 0.050024986267089844,
+        "ratio": 16.492693737489276,
+        "damaged_px": 52455
+      },
+      {
+        "idx": 12,
+        "id": "hurricane-harvey_00000102",
+        "ebpg": 0.49651995301246643,
+        "area": 0.11251163482666016,
+        "ratio": 4.41305429236207,
+        "damaged_px": 117977
+      },
+      {
+        "idx": 13,
+        "id": "hurricane-harvey_00000181",
+        "ebpg": 0.5906568765640259,
+        "area": 0.33248424530029297,
+        "ratio": 1.7764958337516314,
+        "damaged_px": 293710
+      },
+      {
+        "idx": 14,
+        "id": "hurricane-harvey_00000229",
+        "ebpg": 0.43902209401130676,
+        "area": 0.012272834777832031,
+        "ratio": 35.77185727329241,
+        "damaged_px": 12869
+      },
+      {
+        "idx": 15,
+        "id": "hurricane-harvey_00000295",
+        "ebpg": 0.7491899728775024,
+        "area": 0.0060272216796875,
+        "ratio": 124.30104825949367,
+        "damaged_px": 6320
+      },
+      {
+        "idx": 16,
+        "id": "hurricane-harvey_00000362",
+        "ebpg": 0.3678678274154663,
+        "area": 0.14151668548583984,
+        "ratio": 2.599466106435026,
+        "damaged_px": 148391
+      },
+      {
+        "idx": 17,
+        "id": "hurricane-harvey_00000404",
+        "ebpg": 0.5339376926422119,
+        "area": 0.29745960235595703,
+        "ratio": 1.7949922894177468,
+        "damaged_px": 308980
+      },
+      {
+        "idx": 18,
+        "id": "hurricane-harvey_00000475",
+        "ebpg": 0.3876737356185913,
+        "area": 0.23232269287109375,
+        "ratio": 1.6686864758136022,
+        "damaged_px": 127400
+      },
+      {
+        "idx": 19,
+        "id": "hurricane-matthew_00000026",
+        "ebpg": 0.4156913757324219,
+        "area": 0.06025981903076172,
+        "ratio": 6.898317691930302,
+        "damaged_px": 35058
+      },
+      {
+        "idx": 21,
+        "id": "hurricane-matthew_00000127",
+        "ebpg": 0.4924255311489105,
+        "area": 0.015179634094238281,
+        "ratio": 32.43988149462839,
+        "damaged_px": 15917
+      },
+      {
+        "idx": 25,
+        "id": "hurricane-matthew_00000327",
+        "ebpg": 0.3605071008205414,
+        "area": 0.0056400299072265625,
+        "ratio": 63.91935978187352,
+        "damaged_px": 5574
+      },
+      {
+        "idx": 27,
+        "id": "hurricane-michael_00000033",
+        "ebpg": 0.273300439119339,
+        "area": 0.013882637023925781,
+        "ratio": 19.686493181974306,
+        "damaged_px": 8798
+      },
+      {
+        "idx": 28,
+        "id": "hurricane-michael_00000086",
+        "ebpg": 0.658453643321991,
+        "area": 0.012058258056640625,
+        "ratio": 54.606033494147425,
+        "damaged_px": 0
+      },
+      {
+        "idx": 30,
+        "id": "hurricane-michael_00000215",
+        "ebpg": 0.5140289664268494,
+        "area": 0.05519676208496094,
+        "ratio": 9.31266521821763,
+        "damaged_px": 46078
+      },
+      {
+        "idx": 31,
+        "id": "hurricane-michael_00000279",
+        "ebpg": 0.49812033772468567,
+        "area": 0.12679481506347656,
+        "ratio": 3.9285544718474057,
+        "damaged_px": 63266
+      }
+    ]
+  },
+  "figure": {
+    "path": "/Users/kabishbhattarai/Desktop/oliz/pilot/pilot_prediction_and_gradcam.png",
+    "tile": "hurricane-harvey_00000404",
+    "selection_rule": "tile with most ground-truth damaged pixels among Grad-CAM tiles"
+  }
+}
